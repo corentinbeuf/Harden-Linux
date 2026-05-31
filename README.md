@@ -23,7 +23,7 @@
 - [x] R11 - Configuration option of the Yama LSM
 - [x] R12 - IPv4 configuration options
 - [x] R13 - Disabling IPv6
-- [ ] R14 - File system configuration options
+- [x] R14 - File system configuration options
 - [ ] R28 - Typical partitioning
 - [ ] R32 - Configuring a timeout on local user sessions
 - [ ] R33 - Ensuring the imputability of administration actions

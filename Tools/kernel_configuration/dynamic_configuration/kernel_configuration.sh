@@ -1,9 +1,9 @@
+# "kernel.pid_max=65536"
 function Set-KernelOptions() {
     local sysctl_file="/etc/sysctl.d/anssi-configure-kernel.conf"
     local params=(
         "kernel.dmesg_restrict=1"
         "kernel.kptr_restrict=2"
-        # "kernel.pid_max=65536"
         "kernel.perf_cpu_time_max_percent=1"
         "kernel.perf_event_max_sample_rate=1"
         "kernel.perf_event_paranoid=2"
@@ -29,8 +29,8 @@ function Set-KernelOptions() {
         if grep -qE "^${key}\s*=" "$sysctl_file" 2>/dev/null; then
             sed -i "s|^${key}\s*=.*|${key} = ${value}|" "$sysctl_file"
         else
-            # Clé absente → ajouter
             # echo "${key} = ${value}" >> "$sysctl_file"
+            echo "" > /dev/null
         fi
 
         added=true
@@ -67,8 +67,8 @@ function Set-KernelModulesLoading() {
         if grep -qE "^${key}\s*=" "$sysctl_file" 2>/dev/null; then
             sed -i "s|^${key}\s*=.*|${key} = ${value}|" "$sysctl_file"
         else
-            # Clé absente → ajouter
             # echo "${key} = ${value}" >> "$sysctl_file"
+            echo "" > /dev/null
         fi
 
         added=true

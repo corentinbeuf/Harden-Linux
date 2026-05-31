@@ -8,6 +8,7 @@ chmod +x "$SCRIPT_DIR/Audit/audit.sh"
 source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/memory_configuration.sh"
 source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/kernel_configuration.sh"
 source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/process_configuration.sh"
+source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/network_configuration.sh"
 
 function Show-Banner() {
     clear
@@ -52,6 +53,9 @@ select choix in "${options[@]}"; do
             Set-KernelModulesLoading #R10
             Set-YAMAOptionsSysctl #R11
             Set-YAMAOptionsGrub #R11
+            Set-NetworkOptions #R12
+            Set-Ipv6Sysctl #R13
+            Set-Ipv6OptionsGrub #R13
             ;;
         3)
 

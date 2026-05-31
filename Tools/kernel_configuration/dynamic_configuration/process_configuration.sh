@@ -20,8 +20,8 @@ function Set-YAMAOptionsSysctl() {
         if grep -qE "^${key}\s*=" "$sysctl_file" 2>/dev/null; then
             sed -i "s|^${key}\s*=.*|${key} = ${value}|" "$sysctl_file"
         else
-            # Clé absente → ajouter
             # echo "${key} = ${value}" >> "$sysctl_file"
+            echo "" > /dev/null
         fi
 
         added=true

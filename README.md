@@ -21,8 +21,8 @@
 - [x] R8 - Configuring the memory options
 - [x] R9 - Configuring the kernel options
 - [x] R11 - Configuration option of the Yama LSM
-- [ ] R12 - IPv4 configuration options
-- [ ] R13 - Disabling IPv6
+- [x] R12 - IPv4 configuration options
+- [x] R13 - Disabling IPv6
 - [ ] R14 - File system configuration options
 - [ ] R28 - Typical partitioning
 - [ ] R32 - Configuring a timeout on local user sessions

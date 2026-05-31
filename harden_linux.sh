@@ -22,7 +22,7 @@ BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 NC='\033[0m' # Aucune couleur
 
-VERSION="2.0"
+VERSION="1.0"
 AUTHOR="Corentin Beuf"
 GITHUB="https://github.com/corentinbeuf/Harden-Linux"
 

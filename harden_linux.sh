@@ -1,5 +1,12 @@
 #!/bin/bash
 
+SCRIPT_DIR=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
+
+chmod +x "$SCRIPT_DIR/Menu/detailed_menu.sh"
+chmod +x "$SCRIPT_DIR/Audit/audit.sh"
+
+source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/memory_configuration.sh"
+
 function Show-Banner() {
     clear
     echo -e "${CYAN}"
@@ -37,12 +44,13 @@ select choix in "${options[@]}"; do
             ./Audit/audit.sh
             ;;
         2)
-            
+            Set-Iommu #R7
             ;;
         3)
 
             ;;
         4)
+            echo -e "${YELLOW} You need to restart the system to fully take in consideration the modifications !${NC}"
             break
             ;;
         *)

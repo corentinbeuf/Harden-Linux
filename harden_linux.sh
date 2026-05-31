@@ -48,6 +48,8 @@ select choix in "${options[@]}"; do
             Set-MemoryOptions #R8
             Set-KernelOptions #R9
             Set-KernelModulesLoading #R10
+            Set-YAMAOptionsSysctl #R11
+            Set-YAMAOptionsGrub #R11
             ;;
         3)
 

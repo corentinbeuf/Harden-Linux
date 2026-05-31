@@ -20,7 +20,7 @@
 - [ ] R5 - Configuring a password on the bootloader
 - [x] R8 - Configuring the memory options
 - [x] R9 - Configuring the kernel options
-- [ ] R11 - Configuration option of the Yama LSM
+- [x] R11 - Configuration option of the Yama LSM
 - [ ] R12 - IPv4 configuration options
 - [ ] R13 - Disabling IPv6
 - [ ] R14 - File system configuration options

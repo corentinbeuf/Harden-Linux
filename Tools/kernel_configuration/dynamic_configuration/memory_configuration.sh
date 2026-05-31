@@ -22,7 +22,7 @@ function Set-Iommu() {
 
     if [[ "$added" == true ]]; then
         sed -i "s|^GRUB_CMDLINE_LINUX=\".*\"|GRUB_CMDLINE_LINUX=\"$current\"|" "$grub_file"
-        update-grub 2>/dev/null
+        update-grub2 2>/dev/null
         echo -e "${GREEN}[Task R7] : IOMMU option have been added to the GRUB.${NC}"
     else
         echo -e "${YELLOW}[Task R7] : IOMMU option is already configured in the GRUB.${NC}"
@@ -63,7 +63,7 @@ function Set-MemoryOptions() {
 
     if [[ "$added" == true ]]; then
         sed -i "s|^GRUB_CMDLINE_LINUX=\".*\"|GRUB_CMDLINE_LINUX=\"$current\"|" "$grub_file"
-        update-grub 2>/dev/null
+        update-grub2 2>/dev/null
         echo -e "${GREEN}[Task R8] : Memory hardening options have been added to GRUB.${NC}"
     else
         echo -e "${YELLOW}[Task R8] : Memory hardening options are already configured in GRUB.${NC}"

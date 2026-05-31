@@ -30,14 +30,15 @@ function Set-KernelOptions() {
             sed -i "s|^${key}\s*=.*|${key} = ${value}|" "$sysctl_file"
         else
             # Clé absente → ajouter
-            echo "${key} = ${value}" >> "$sysctl_file"
+            # echo "${key} = ${value}" >> "$sysctl_file"
         fi
 
         added=true
     done
 
     if [[ "$added" == true ]]; then
-        sysctl --system 2>/dev/null
+        # sysctl --system 2>/dev/null
+        sysctl -p $sysctl_file 2>/dev/null
         echo -e "${GREEN}[Task R9] : Sysctl hardening options have been applied.${NC}"
     else
         echo -e "${YELLOW}[Task R9] : Sysctl hardening options are already configured.${NC}"
@@ -67,14 +68,13 @@ function Set-KernelModulesLoading() {
             sed -i "s|^${key}\s*=.*|${key} = ${value}|" "$sysctl_file"
         else
             # Clé absente → ajouter
-            echo "${key} = ${value}" >> "$sysctl_file"
+            # echo "${key} = ${value}" >> "$sysctl_file"
         fi
 
         added=true
     done
 
     if [[ "$added" == true ]]; then
-        sysctl --system 2>/dev/null
         echo -e "${GREEN}[Task R10] : Sysctl hardening options have been applied.${NC}"
     else
         echo -e "${YELLOW}[Task R10] : Sysctl hardening options are already configured.${NC}"

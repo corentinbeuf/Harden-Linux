@@ -21,14 +21,15 @@ function Set-YAMAOptionsSysctl() {
             sed -i "s|^${key}\s*=.*|${key} = ${value}|" "$sysctl_file"
         else
             # Clé absente → ajouter
-            echo "${key} = ${value}" >> "$sysctl_file"
+            # echo "${key} = ${value}" >> "$sysctl_file"
         fi
 
         added=true
     done
 
     if [[ "$added" == true ]]; then
-        sysctl --system 2>/dev/null
+        # sysctl --system 2>/dev/null
+        sysctl -p $sysctl_file 2>/dev/null
         echo -e "${GREEN}[Task R11] : Sysctl hardening options have been applied.${NC}"
     else
         echo -e "${YELLOW}[Task R11] : Sysctl hardening options are already configured.${NC}"
@@ -59,9 +60,9 @@ function Set-YAMAOptionsGrub() {
 
     if [[ "$added" == true ]]; then
         sed -i "s|^GRUB_CMDLINE_LINUX=\".*\"|GRUB_CMDLINE_LINUX=\"$current\"|" "$grub_file"
-        update-grub 2>/dev/null
-        echo -e "${GREEN}[Task R11] : IOMMU option have been added to the GRUB.${NC}"
+        update-grub2 2>/dev/null
+        echo -e "${GREEN}[Task R11] : YAMA option have been added to the GRUB.${NC}"
     else
-        echo -e "${YELLOW}[Task R11] : IOMMU option is already configured in the GRUB.${NC}"
+        echo -e "${YELLOW}[Task R11] : YAMA option is already configured in the GRUB.${NC}"
     fi
 }

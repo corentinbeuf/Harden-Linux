@@ -45,6 +45,7 @@ select choix in "${options[@]}"; do
             ;;
         2)
             Set-Iommu #R7
+            Set-MemoryOptions #R8
             ;;
         3)
 

@@ -18,8 +18,8 @@
 - [ ] R2 - Configuring the BIOS/UEFI
 - [ ] R3 - Activating the UEFI secure boot
 - [ ] R5 - Configuring a password on the bootloader
-- [ ] R8 - Configuring the memory options
-- [ ] R9 - Configuring the kernel options
+- [x] R8 - Configuring the memory options
+- [x] R9 - Configuring the kernel options
 - [ ] R11 - Configuration option of the Yama LSM
 - [ ] R12 - IPv4 configuration options
 - [ ] R13 - Disabling IPv6
@@ -48,7 +48,7 @@
 ### Enhanced level recommendations
 - [ ] R1 - Choosing and configuring the hardware
 - [x] R7 - Activating the IOMMU
-- [ ] R10 - Disabling kernel modules loading
+- [x] R10 - Disabling kernel modules loading
 - [ ] R29 - Access restrictions on /boot
 - [ ] R36 - Changing the default value of UMASK
 - [ ] R37 - Using Mandatory Access Control features

@@ -38,9 +38,9 @@ function Set-KernelOptions() {
 
     if [[ "$added" == true ]]; then
         sysctl --system 2>/dev/null
-        echo -e "${GREEN}[Task R??] : Sysctl hardening options have been applied.${NC}"
+        echo -e "${GREEN}[Task R9] : Sysctl hardening options have been applied.${NC}"
     else
-        echo -e "${YELLOW}[Task R??] : Sysctl hardening options are already configured.${NC}"
+        echo -e "${YELLOW}[Task R9] : Sysctl hardening options are already configured.${NC}"
     fi
 }
 
@@ -75,8 +75,8 @@ function Set-KernelModulesLoading() {
 
     if [[ "$added" == true ]]; then
         sysctl --system 2>/dev/null
-        echo -e "${GREEN}[Task R??] : Sysctl hardening options have been applied.${NC}"
+        echo -e "${GREEN}[Task R10] : Sysctl hardening options have been applied.${NC}"
     else
-        echo -e "${YELLOW}[Task R??] : Sysctl hardening options are already configured.${NC}"
+        echo -e "${YELLOW}[Task R10] : Sysctl hardening options are already configured.${NC}"
     fi
 }

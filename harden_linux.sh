@@ -6,6 +6,8 @@ chmod +x "$SCRIPT_DIR/Menu/detailed_menu.sh"
 chmod +x "$SCRIPT_DIR/Audit/audit.sh"
 
 source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/memory_configuration.sh"
+source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/kernel_configuration.sh"
+source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/process_configuration.sh"
 
 function Show-Banner() {
     clear

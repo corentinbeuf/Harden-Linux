@@ -64,8 +64,8 @@ function Set-MemoryOptions() {
     if [[ "$added" == true ]]; then
         sed -i "s|^GRUB_CMDLINE_LINUX=\".*\"|GRUB_CMDLINE_LINUX=\"$current\"|" "$grub_file"
         update-grub 2>/dev/null
-        echo -e "${GREEN}[Task R??] : Memory hardening options have been added to GRUB.${NC}"
+        echo -e "${GREEN}[Task R8] : Memory hardening options have been added to GRUB.${NC}"
     else
-        echo -e "${YELLOW}[Task R??] : Memory hardening options are already configured in GRUB.${NC}"
+        echo -e "${YELLOW}[Task R8] : Memory hardening options are already configured in GRUB.${NC}"
     fi
 }

@@ -484,7 +484,7 @@ Get-SysctlOption "0" "net/ipv4/conf/default/accept_source_route" "R12 - IPv4 con
 Get-SysctlOption "1" "net/ipv4/conf/all/arp_filter" "R12 - IPv4 configuration options (arp_filter)"
 Get-SysctlOption "2" "net/ipv4/conf/all/arp_ignore" "R12 - IPv4 configuration options (arp_ignore)"
 Get-SysctlOption "0" "net/ipv4/conf/all/route_localnet" "R12 - IPv4 configuration options (route_localnet)"
-Get-SysctlOption "0" "net/ipv4/conf/all/drop_gratuitous_arp" "R12 - IPv4 configuration options (drop_gratuitous_arp)"
+Get-SysctlOption "1" "net/ipv4/conf/all/drop_gratuitous_arp" "R12 - IPv4 configuration options (drop_gratuitous_arp)"
 Get-SysctlOption "1" "net/ipv4/conf/default/rp_filter" "R12 - IPv4 configuration options (rp_filter)"
 Get-SysctlOption "1" "net/ipv4/conf/all/rp_filter" "R12 - IPv4 configuration options (rp_filter)"
 Get-SysctlOption "0" "net/ipv4/conf/default/send_redirects" "R12 - IPv4 configuration options (send_redirects)"

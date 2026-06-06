@@ -13,6 +13,7 @@ source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/fs_configur
 
 source "$SCRIPT_DIR/Tools/system_configuration/files_and_directories/access_rights.sh"
 source "$SCRIPT_DIR/Tools/system_configuration/monitoring_and_maintenance/monitoring_and_maintenance.sh"
+source "$SCRIPT_DIR/Tools/services_configuration/services_configuration.sh"
 
 function Show-Banner() {
     clear
@@ -66,6 +67,7 @@ select choix in "${options[@]}"; do
             Remove-SetuidAndSetgid #R56
 
             Set-UpdateService #R61
+            Disable-UnnecessaryService #R62
             ;;
         3)
 

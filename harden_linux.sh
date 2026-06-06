@@ -11,6 +11,8 @@ source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/process_con
 source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/network_configuration.sh"
 source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/fs_configuration.sh"
 
+source "$SCRIPT_DIR/Tools/system_configuration/account_access/service_account.sh"
+
 source "$SCRIPT_DIR/Tools/system_configuration/files_and_directories/access_rights.sh"
 source "$SCRIPT_DIR/Tools/system_configuration/monitoring_and_maintenance/monitoring_and_maintenance.sh"
 source "$SCRIPT_DIR/Tools/services_configuration/services_configuration.sh"
@@ -63,6 +65,8 @@ select choix in "${options[@]}"; do
             Set-Ipv6Sysctl #R13
             Set-Ipv6OptionsGrub #R13
             Set-FileSystemOptions #R14
+
+            Disable-ServiceAccount #R34
 
             Set-TempDirectory #R55
             Remove-SetuidAndSetgid #R56

@@ -30,7 +30,7 @@ All the tasks performed in this script are based on the ANSSI guide, accessible 
 - [ ] R28 - Typical partitioning
 - [ ] R32 - Configuring a timeout on local user sessions
 - [ ] R33 - Ensuring the imputability of administration actions
-- [ ] R34 - Disabling the service accounts
+- [x] R34 - Disabling the service accounts
 - [ ] R35 - Uniqueness and exclusivity of service accounts
 - [ ] R39 - Sudo configuration guidelines
 - [ ] R40 - Using unprivileged users as target for sudo commands

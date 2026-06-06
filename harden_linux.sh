@@ -16,7 +16,7 @@ source "$SCRIPT_DIR/Tools/system_configuration/files_and_directories/sensitive_f
 source "$SCRIPT_DIR/Tools/system_configuration/files_and_directories/access_rights.sh"
 source "$SCRIPT_DIR/Tools/system_configuration/monitoring_and_maintenance/monitoring_and_maintenance.sh"
 source "$SCRIPT_DIR/Tools/services_configuration/services_configuration.sh"
-source "$SCRIPT_DIR/Tools/service_configuration/system_services/pam.sh"
+source "$SCRIPT_DIR/Tools/services_configuration/system_services/pam.sh"
 
 function Show-Banner() {
     clear

@@ -12,7 +12,7 @@ All the tasks performed in this script are based on the ANSSI guide, accessible 
 - [x] R56 - Avoiding using executables with setuid and setgid rights
 - [ ] R58 - Installing only strictly necessary packages
 - [ ] R59 - Using only official package repositories
-- [ ] R61 - Updating regularly the system
+- [x] R61 - Updating regularly the system
 - [ ] R62 - Disabling the non-necessary services
 - [ ] R68 - Protecting the stored passwords
 - [ ] R80 - Minimizing the attack surface of network services

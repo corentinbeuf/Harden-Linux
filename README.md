@@ -37,7 +37,7 @@ All the tasks performed in this script are based on the ANSSI guide, accessible 
 - [ ] R42 - Banishing the negations in sudo policies
 - [ ] R43 - Defining the arguments in sudo specifications
 - [ ] R44 - Editing files securely with sudo
-- [ ] R50 - Limiting the rights to access sensitive files and directories
+- [x] R50 - Limiting the rights to access sensitive files and directories
 - [ ] R52 - Securing access for named sockets and pipes
 - [x] R55 - Dedicating temporary directories to users
 - [ ] R63 - Disabling non-essential features of service

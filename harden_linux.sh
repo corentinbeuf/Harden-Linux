@@ -12,7 +12,7 @@ source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/network_con
 source "$SCRIPT_DIR/Tools/kernel_configuration/dynamic_configuration/fs_configuration.sh"
 
 source "$SCRIPT_DIR/Tools/system_configuration/account_access/service_account.sh"
-
+source "$SCRIPT_DIR/Tools/system_configuration/files_and_directories/sensitive_files_and_directories.sh"
 source "$SCRIPT_DIR/Tools/system_configuration/files_and_directories/access_rights.sh"
 source "$SCRIPT_DIR/Tools/system_configuration/monitoring_and_maintenance/monitoring_and_maintenance.sh"
 source "$SCRIPT_DIR/Tools/services_configuration/services_configuration.sh"
@@ -67,6 +67,8 @@ select choix in "${options[@]}"; do
             Set-FileSystemOptions #R14
 
             Disable-ServiceAccount #R34
+
+            Set-PermissionsOnSensitiveFiles #R50
 
             Set-TempDirectory #R55
             Remove-SetuidAndSetgid #R56

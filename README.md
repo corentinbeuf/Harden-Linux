@@ -14,7 +14,7 @@ All the tasks performed in this script are based on the ANSSI guide, accessible 
 - [ ] R59 - Using only official package repositories
 - [x] R61 - Updating regularly the system
 - [x] R62 - Disabling the non-necessary services
-- [ ] R68 - Protecting the stored passwords
+- [x] R68 - Protecting the stored passwords
 - [ ] R80 - Minimizing the attack surface of network services
 
 ### Intermediary level recommendations

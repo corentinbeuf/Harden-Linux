@@ -11,7 +11,7 @@ This script permit to audit the configuration of your Linux server.
 - [x] R56 - Avoiding using executables with setuid and setgid rights
 - [ ] R58 - Installing only strictly necessary packages
 - [ ] R59 - Using only official package repositories
-- [ ] R61 - Updating regularly the system
+- [x] R61 - Updating regularly the system
 - [x] R62 - Disabling the non-necessary services
 - [x] R68 - Protecting the stored passwords
 - [x] R80 - Minimizing the attack surface of network services

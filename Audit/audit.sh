@@ -380,12 +380,28 @@ function Get-LineInFile() {
     fi
 }
 
-function Get-Service() {
+function Get-ActiveService() {
     local service="$1"
-    local desc="$2"
+    local type="$2"
+    local desc="$3"
 
     local result
-    result=$(eval sudo systemctl list-units --type service | grep "${service}")
+    result=$(eval sudo systemctl list-units --type "${type}" | grep "${service}")
+
+    if [[ -n "$result" ]]; then
+        Print-Ok "$desc"
+    else
+        Print-Fail "$desc (missing or incorrect)"
+    fi
+}
+
+function Get-DisableService() {
+    local service="$1"
+    local type="$2"
+    local desc="$3"
+
+    local result
+    result=$(eval sudo systemctl list-units --type "${type}" | grep "${service}")
 
     if [[ -z "$result" ]]; then
         Print-Ok "$desc"
@@ -520,16 +536,18 @@ Get-PermissionOnFS "f" "-perm /6000" "R56 - Avoiding using executables with setu
 #R59
 #R60
 #R61
-Get-Service "portmap" "R62 - Disabling the non-necessary services"
-Get-Service "rpc.statd" "R62 - Disabling the non-necessary services"
-Get-Service "rpcbind" "R62 - Disabling the non-necessary services"
-Get-Service "dbus" "R62 - Disabling the non-necessary services"
-Get-Service "hald" "R62 - Disabling the non-necessary services"
-Get-Service "ConsoleKit" "R62 - Disabling the non-necessary services"
-Get-Service "cups" "R62 - Disabling the non-necessary services"
-Get-Service "PolicyKit" "R62 - Disabling the non-necessary services"
-Get-Service "avahi" "R62 - Disabling the non-necessary services"
-#Get-Service "x" "R62 - Disabling the non-necessary services"
+Get-ActiveService "apt-daily" "timer" "R61 - Updating regularly the system"
+Get-ActiveService "pt-daily-upgrade" "service" "R61 - Updating regularly the system"
+Get-DisableService "portmap" "service" "R62 - Disabling the non-necessary services"
+Get-DisableService "rpc.statd" "service" "R62 - Disabling the non-necessary services"
+Get-DisableService "rpcbind" "service" "R62 - Disabling the non-necessary services"
+Get-DisableService "dbus" "service" "R62 - Disabling the non-necessary services"
+Get-DisableService "hald" "service" "R62 - Disabling the non-necessary services"
+Get-DisableService "ConsoleKit" "service" "R62 - Disabling the non-necessary services"
+Get-DisableService "cups" "service" "R62 - Disabling the non-necessary services"
+Get-DisableService "PolicyKit" "service" "R62 - Disabling the non-necessary services"
+Get-DisableService "avahi" "service" "R62 - Disabling the non-necessary services"
+#Get-DisableService "x" "service" "R62 - Disabling the non-necessary services"
 Get-PermissionOnFS "f" "-perm /111 -exec getcap {} \;" "R63 - Disabling non-essential features of services"
 
 Get-ParamInFile "rounds" "11" "/etc/pam.d/common-password" "R68 - Protecting the stored passwords"

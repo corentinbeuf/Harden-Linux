@@ -1,12 +1,15 @@
 # Harden-Linux
 
+This script permit to secure your Linux server.
+All the tasks performed in this script are based on the ANSSI guide, accessible from this link : [Configuring recommendations of a GNU/LINUX system](https://messervices.cyber.gouv.fr/documents-guides/linux_configuration-en-v2.pdf). Available in French and in English.
+
 ## Hardening
 ### Minimal level recommendations
 - [ ] R30 - Removing the unused user accounts
 - [ ] R31 - User password strength
 - [ ] R53 - Avoiding files or directories without a known user or group
 - [ ] R54 - Setting the sticky bit on the writable directories
-- [ ] R56 - Avoiding using executables with setuid and setgid rights
+- [x] R56 - Avoiding using executables with setuid and setgid rights
 - [ ] R58 - Installing only strictly necessary packages
 - [ ] R59 - Using only official package repositories
 - [ ] R61 - Updating regularly the system
@@ -36,7 +39,7 @@
 - [ ] R44 - Editing files securely with sudo
 - [ ] R50 - Limiting the rights to access sensitive files and directories
 - [ ] R52 - Securing access for named sockets and pipes
-- [ ] R55 - Dedicating temporary directories to users
+- [x] R55 - Dedicating temporary directories to users
 - [ ] R63 - Disabling non-essential features of service
 - [ ] R67 - Secure remote authentication with PAM
 - [ ] R69 - Securing access to remote user databases

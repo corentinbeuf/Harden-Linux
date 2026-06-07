@@ -16,6 +16,7 @@ source "$PROJECT_ROOT/Tools/system_configuration/files_and_directories/access_ri
 source "$PROJECT_ROOT/Tools/system_configuration/monitoring_and_maintenance/monitoring_and_maintenance.sh"
 source "$PROJECT_ROOT/Tools/services_configuration/services_configuration.sh"
 source "$PROJECT_ROOT/Tools/services_configuration/system_services/pam.sh"
+source "$PROJECT_ROOT/Tools/services_configuration/network_services/network_services.sh"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -34,7 +35,6 @@ options=("${CYAN_MENU}R7 - Activating the IOMMU${NC_MENU}"\
  "${CYAN_MENU}R12 - IPv4 configuration options${NC_MENU}"\
  "${CYAN_MENU}R13 - Disabling IPv6${NC_MENU}"\
  "${CYAN_MENU}R14 - File system configuration options${NC_MENU}"\
- "${CYAN_MENU}R33 - Ensuring the imputability of administration actions${NC_MENU}"\
  "${CYAN_MENU}R34 - Disabling the service accounts${NC_MENU}"\
  "${CYAN_MENU}R50 - Limiting the rights to access sensitive files and directories${NC_MENU}"\
  "${CYAN_MENU}R55 - Dedicating temporary directories to users${NC_MENU}"\
@@ -42,6 +42,7 @@ options=("${CYAN_MENU}R7 - Activating the IOMMU${NC_MENU}"\
  "${CYAN_MENU}R61 - Updating regularly the system${NC_MENU}"\
  "${CYAN_MENU}R62 - Disabling the non-necessary services${NC_MENU}"\
  "${CYAN_MENU}R68 - Protecting the stored passwords${NC_MENU}"\
+ "${CYAN_MENU}R80 - Minimizing the attack surface of network services${NC_MENU}"\
   "${RED_MENU}Return${NC_MENU}")
 
 select choice in "${options[@]}"; do
@@ -70,28 +71,28 @@ select choice in "${options[@]}"; do
             Set-FileSystemOptions #R14
             ;;
         8)
-            Set-AdminAccountabilit #R33
-            ;;
-        9)
             Disable-ServiceAccount #R34
             ;;
-        10)
+        9)
             Set-PermissionsOnSensitiveFiles #R50
             ;;
-        11)
+        10)
             Set-TempDirectory #R55
             ;;
-        12)
+        11)
             Remove-SetuidAndSetgid #R56
             ;;
-        13)
+        12)
             Set-UpdateService #R61
             ;;
-        14)
+        13)
             Disable-UnnecessaryService #R62
             ;;
-        15)
+        14)
             Set-PAMProtectedPassword #R68
+            ;;
+        15)
+            Set-IPAddressOnEachService #R80
             ;;
         16)
             break

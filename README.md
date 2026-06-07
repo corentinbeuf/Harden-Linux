@@ -15,7 +15,7 @@ All the tasks performed in this script are based on the ANSSI guide, accessible 
 - [x] R61 - Updating regularly the system
 - [x] R62 - Disabling the non-necessary services
 - [x] R68 - Protecting the stored passwords
-- [ ] R80 - Minimizing the attack surface of network services
+- [x] R80 - Minimizing the attack surface of network services
 
 ### Intermediary level recommendations
 - [ ] R2 - Configuring the BIOS/UEFI

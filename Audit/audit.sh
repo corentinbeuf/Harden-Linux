@@ -212,10 +212,13 @@ function Get-ServiceAccounts() {
         [[ "$uid" -lt 1 || "$uid" -ge 1000 ]] && continue
 
         # Shell interactif = problème
-        if [[ "$shell" != "/usr/sbin/nologin" && \
-              "$shell" != "/bin/false" && \
-              "$shell" != "/sbin/nologin" && \
-              "$shell" != "/dev/null" ]]; then
+        if [[ "$shell" = "/bin/sh" || \
+              "$shell" = "/usr/bin/sh" || \
+              "$shell" = "/bin/bash" || \
+              "$shell" = "/usr/bin/bash" || \
+              "$shell" = "/bin/rbash" || \
+              "$shell" = "/usr/bin/rbash" || \
+              "$shell" = "/usr/bin/dash" ]]; then
             failures+=("$user (UID $uid) shell actif : $shell")
         fi
 

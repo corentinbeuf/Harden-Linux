@@ -31,7 +31,7 @@ function Set-NetworkOptions() {
     for param in "${params[@]}"; do
         local key value
         key=$(echo "$param" | cut -d= -f1 | tr -d ' ')
-        value=$(echo "$param" | cut -d= -f2 | tr -d ' ')
+        value=$(echo "$param" | cut -d= -f2-)
 
         # Vérifier si la clé est déjà présente avec la bonne valeur
         if grep -qE "^${key}\s*=\s*${value}" "$sysctl_file" 2>/dev/null; then

@@ -42,8 +42,7 @@ function Set-NetworkOptions() {
         if grep -qE "^${key}\s*=" "$sysctl_file" 2>/dev/null; then
             sed -i "s|^${key}\s*=.*|${key} = ${value}|" "$sysctl_file"
         else
-            # echo "${key} = ${value}" >> "$sysctl_file"
-            echo "" > /dev/null
+            echo "${key} = ${value}" | sudo tee -a "$sysctl_file" > /dev/null
         fi
 
         added=true
@@ -81,8 +80,7 @@ function Set-Ipv6Sysctl() {
         if grep -qE "^${key}\s*=" "$sysctl_file" 2>/dev/null; then
             sed -i "s|^${key}\s*=.*|${key} = ${value}|" "$sysctl_file"
         else
-            # echo "${key} = ${value}" >> "$sysctl_file"
-            echo "" > /dev/null
+            echo "${key} = ${value}" | sudo tee -a "$sysctl_file" > /dev/null
         fi
 
         added=true
